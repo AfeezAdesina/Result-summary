@@ -1,0 +1,183 @@
+:root {
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+    --Light-red-o: hsla(0, 100%, 67%, 0.1);
+    --Orangey-yellow-o: hsl(39, 100%, 56%, 0.1);
+    --Green-teal-o: hsl(166, 100%, 37% , 0.1);
+    --Cobalt-blue-o: hsl(234, 85%, 45% , 0.1);
+    --Light-slate-blue-background: hsl(252, 100%, 67%);
+    --Light-royal-blue-background: hsl(241, 81%, 54%);
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%)
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    transition: all 0.3ms;
+}
+body {
+    font-family: 'Hanken Grotesk', sans-serif
+}
+
+.container {
+    background-color: var(--White);
+    /* width: 375px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow:hidden ;
+    box-shadow:10px 20px 20px rgba(0, 0, 0, 0.2) ;
+    /* transform: translateY(-10px); */
+    border-radius: 20px;   
+}
+
+.result-head {
+    background:linear-gradient(var(--Light-slate-blue-background),var(--Light-royal-blue-background));
+    width: auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: var(--White);
+    padding:40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.number{
+    background:linear-gradient(var(--Violet-blue-circle),var(--Persian-blue-circle)) ;
+    width: 120px;
+    height: 120px;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 30px 0;
+    border-radius: 500px;
+    justify-content: center;
+}
+.no76{
+    font-size: 50px;
+    font-weight: 700;
+}
+.summary-head h2{
+    padding: 20px 0;   
+}
+/* .summary-head{
+    overflow: visible;
+    border-radius: 20px;
+} */
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+li{
+    list-style: none;
+}
+.reaction,.memory,.visual,.verbal{
+    display: flex;
+    justify-content: space-between;
+    padding: 13px;
+    border-radius: 10px;
+}
+.reaction div,.memory div,.verbal div,.visual div{
+    display: flex;
+    gap: 10px;
+}
+
+.reaction {
+    background-color: var(--Light-red-o);
+    color: var(--Light-red);
+    
+}
+.memory{
+    background-color: var(--Orangey-yellow-o);
+    color: var(--Orangey-yellow);
+}
+.verbal{
+    background-color: var(--Green-teal-o);
+    color: var(--Green-teal);
+}
+.visual{
+    background-color: var(--Cobalt-blue-o);
+    color: var(--Cobalt-blue);
+}
+.result{
+    color: var(--Dark-gray-blue);
+    font-weight: 600;
+}
+.result2{
+    color: var(--Dark-gray-blue);
+    font-weight: 600;
+    opacity: 40%;
+}
+.button{
+    color: var(--White);
+    font-size: 15px;
+    font-weight: 500;
+    background-color: var(--Dark-gray-blue);
+    padding: 15px;
+    border-radius: 20px;
+    margin: 20px 0;
+    border-style: none;
+}
+.button:active,.button:hover{
+    background: linear-gradient(var(--Light-slate-blue-background),var(--Light-royal-blue-background));
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width:1440px) {
+    .container{
+        display: grid;
+        grid-template-columns: 375px 375px;
+        /* height: 350px; */
+    }
+    .summary-head{
+        padding:0 40px;
+    }
+    .summary-head:last-child{
+        gap: 60px;
+    }
+    .result-head{
+        border-radius: 20px;
+    }
+    .number{
+        width: 180px;
+        height: 180px;
+    }
+    .great{
+        padding-bottom: 15px;
+        font-size: 35px;
+    }
+    .score{
+        font-size: 20px;
+        font-weight: 200;
+    }
+}
+@media screen and (max-width:375px) {
+    .container{
+        width: 375px;
+        display:grid;
+        grid-template-columns: none;
+    }
+    .result-head{
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
